@@ -1,0 +1,184 @@
+<!doctype html>
+
+<html lang="ru">
+<head>
+
+    <title>Cash converter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--[if lt IE 9]>
+        <script src="js/respond.min.js"></script>
+        <script src="js//html5shiv.min.js"></script>
+    <![endif]-->
+    
+</head>
+
+<body>
+    
+    
+    <div class="container-fluid">
+        <!--header-->
+        <header class="row">
+            <h1 id="logo" class="col-md-6 col-sm-6 col-xs-12">
+                <a href="#" class="logo-box"></a>
+            </h1>
+            <div id="connect" class="col-md-6 col-sm-6 col-xs-12">
+                <a href="#" class="page-link">Зворотній зв'язок</a>
+            </div>
+        </header>
+        
+        <!--main section-->
+        <div class="row wrapper">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row" id="offerWrapper">
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-center currency-tab active-offer"><a id="toGrivna" href="#">Конвертувати в гривні</a></div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 text-center currency-tab"><a id="toCurrency" href="#">Конвертувати в валюту</a></div>
+                </div>
+            </div>
+            
+            
+            <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 currency-wrap">
+               <!--currency buttons block-->
+                <div class="row" id="curTabs">
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <a href="#" class="currency tab-usd active-tab">USD</a>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                        <a href="#" class="currency tab-eur">EUR</a>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                       <a href="#" class="currency tab-rur">RUB</a> 
+                    </div>
+                </div>
+                
+                <!--options block-->
+                <div class="row options">
+                    <div class="col-md-12 text-left">
+                        <h3 class="options-h">Курс</h3>
+                        <fieldset>
+                            <div class="checkbox-wrap">
+                                <input type="radio" id="averageCourse" name="radioB" checked="checked">
+                                <label class="radio-label" for="averageCourse">Середній</label>
+                            </div>
+                            <div class="checkbox-wrap">
+                                <input type="radio" id="bank" name="radioB">
+                                <label class="radio-label" for="bank">Банк - </label>
+                                <label class="select-label disabled-state" for="banksMenu">
+                                    <select name="banks" id="banksMenu" disabled></select>
+                                </label>    
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                
+                <!--curency amount block-->
+                <div class="row currency-amount">
+                   <div class="col-md-12">
+                       <input type="text" class="amount-input" id="amount-input" maxlength="8" placeholder="Введіть кількість">
+                       <span id="currencyType">USD</span>
+                   </div>
+                    
+                </div>
+                
+                <!--curency result block-->
+                <div class="row result">
+                    <table align="center">
+                        <thead>
+                            <tr>
+                                <th class="table-course-head">Курс</th>
+                                <th class="table-result-head">Результат</th>
+                            </tr>
+                        </thead>                        
+                    </table>
+
+                    <div id="resultBody">
+                        
+                    </div>
+                        
+                </div>
+            </div>
+
+        </div>
+        
+        <!--footer-->
+        <footer class="row">
+
+            <div class="col-xs-12 col-md-4">
+               <ul>
+                   <li>
+                       <a href="#" class="page-link" id="info-link">Інфо</a>
+                   </li>
+                   <li>
+                       <a href="#" class="page-link">Зворотній зв'язок</a>
+                   </li>
+               </ul> 
+            </div>
+
+
+            <div class="col-md-4  col-md-push-4 mail">
+                <a href="mailto:yurasobechko@gmail.com"><span class="glyphicon glyphicon-envelope"></span> c.converter@gmail.com</a>
+            </div>
+            
+            <div class="col-md-4 col-md-pull-4  text-center author">
+                <span>2015 
+                    <a href="http://stvyzxx.github.io">stvyzxx.github.io</a>
+                </span>
+            </div>
+
+        </footer>
+    </div>
+    
+   <!-- pages-->
+    <div id="pageWrapper">
+        <div id="page">
+                <div id="page-close">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </div>
+
+            
+                <form action="//formspree.io/yurasobechko@gmail.com" name="contactForm" method="POST">
+                    <div class="overlay"></div>
+                    <h4 id="pageCaption">Зворотній зв'язок</h4>
+                    <fieldset>
+                        <label for="contact-name">Ім'я</label><br>
+                        <input type="text" id="contact-name" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="contact-email">Електронна пошта</label><br>
+                        <input type="text" id="contact-email" required>
+                    </fieldset>
+                    
+                    <fieldset>
+                    <label for="contact-message">Повідомлення</label><br>
+                    <textarea name="contact-message" id="contact-message" rows="5" required></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <input id="contactSubmit" type="submit" value="Надіслати">
+                    </fieldset>    
+                </form> 
+            
+                <div id="infoPage">
+                   <div class="overlay"></div>
+                    <h4 id="pageCaption">Інформація</h4>
+                    <p><i>Cash Converter</i> - калькулятор конвертації гривні у валюту, так і навпаки. Функції конвертації по середньому курсу або по курсу вибраного банку.</p>
+                    <p>Інформацію курсу обміну готівки надана фінансовим порталом <a href="http://finance.ua/ru/currency">FINANCE.UA</a>.</p>
+                    <p>Для запитань та пропозицій зв'яжіться за допомогою зворотнього зв'язку або напишіть на 
+                        <a href="mailto:cash.converter@gmail.com">cash.converter@gmail.com.</a>
+                    </p>
+                </div>       
+        </div>
+
+    </div>
+    
+    <script src="js/modernizr.js"></script>
+    <script src="js/scripts.min.js"></script>
+</body>
+</html>

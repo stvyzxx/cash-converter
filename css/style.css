@@ -1,0 +1,687 @@
+@charset "UTF-8";
+/*---colors---*/
+/*---font---*/
+@font-face {
+  font-family: mainFont;
+  src: url(../fonts/BauhausC_Medium_Regular.ttf); }
+/*---extends---*/
+.transition, header #connect a, .wrapper .currency-tab, .wrapper .currency-tab a, .wrapper .currency, .options fieldset .radio-label:before, .options fieldset .radio-label:after, .options .select-label:after, .options .select-label:before, .currency-amount .amount-input, footer ul li a, #pageWrapper #infoPage a, #pageWrapper form textarea, #pageWrapper form input[type="text"], #pageWrapper form #contactSubmit, #pageWrapper #page-close {
+  -webkit-transition: all ease-in-out .15s;
+  transition: all ease-in-out .15s; }
+
+/* reset to default styles */
+input, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border-radius: 0; }
+
+/*---main styles---*/
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: Tahoma, sans-serif;
+  /* background: #fefcea; Для старых браузров */
+  height: 100vh;
+  min-width: 320px;
+  max-width: 1600px; }
+
+h1 {
+  margin: 0; }
+
+a:hover {
+  text-decoration: none; }
+a:link {
+  text-decoration: none;
+  outline: none; }
+
+/**/
+:focus {
+  outline: none; }
+
+::-moz-focus-inner {
+  border: 0; }
+
+/*---header section---*/
+header {
+  min-height: 100px;
+  background-color: #0fa3b1; }
+  header #connect {
+    text-align: right;
+    padding: 10px 30px 10px 0; }
+    header #connect a {
+      font-size: 1.2em;
+      color: #e8f7ee; }
+      header #connect a:hover {
+        color: #fcba04;
+        text-decoration: none; }
+
+#logo {
+  padding-top: 30px; }
+  #logo .logo-box {
+    padding: 0;
+    display: block;
+    width: 180px;
+    height: 60px;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat; }
+
+/*---main section---*/
+.wrapper {
+  background: #e8f7ee;
+  background: -webkit-linear-gradient(top, #e8f7ee, #e5ffde);
+  background: linear-gradient(to bottom, #e8f7ee, #e5ffde); }
+  .wrapper #offerWrapper {
+    min-height: 65px; }
+  .wrapper .currency-tab {
+    height: 56px;
+    background-color: #8bd9dd;
+    font: 1.8em/50px Tahoma, sans-serif;
+    border-bottom: 4px solid #0fa3b1;
+    /* active convertion tab */ }
+    .wrapper .currency-tab:hover {
+      cursor: pointer;
+      border-bottom: 4px solid #fcba04; }
+      .wrapper .currency-tab:hover a {
+        color: #0fa3b1;
+        text-decoration: none; }
+    .wrapper .currency-tab.active-offer {
+      height: 65px;
+      border-bottom: 4px solid #fcba04; }
+      .wrapper .currency-tab.active-offer a {
+        color: #0fa3b1; }
+    .wrapper .currency-tab a {
+      display: block;
+      color: #e8f7ee; }
+  .wrapper .currency-wrap {
+    margin-top: 60px;
+    text-align: center; }
+  .wrapper .currency {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 60px;
+    color: #0fa3b1;
+    background-color: #8bd9dd;
+    text-align: center;
+    font: 1.8em/60px Tahoma,sans-serif;
+    color: #e8f7ee; }
+    .wrapper .currency:hover {
+      background: #0fa3b1; }
+    .wrapper .currency.active-tab {
+      color: #fcba04;
+      background: #0fa3b1; }
+
+/*---options section---*/
+.options {
+  margin-top: 40px;
+  /* disbled state of select element */ }
+  .options .options-h {
+    color: #0fa3b1;
+    margin: 0;
+    font-size: 2em; }
+  .options fieldset {
+    margin-left: 75px;
+    position: relative; }
+    .options fieldset #averageCourse, .options fieldset #bank {
+      display: none; }
+    .options fieldset .radio-label {
+      position: relative;
+      padding: 0 0 0 40px;
+      margin-bottom: 20px;
+      color: #0fa3b1;
+      font: 1.6em Tahoma,sans-serif;
+      cursor: pointer; }
+      .options fieldset .radio-label:before, .options fieldset .radio-label:after {
+        content: "";
+        position: absolute; }
+      .options fieldset .radio-label:before {
+        left: 0;
+        width: 30px;
+        height: 30px;
+        border: 4px solid #0fa3b1;
+        border-radius: 50%; }
+      .options fieldset .radio-label:after {
+        display: none;
+        top: 7px;
+        left: 7px;
+        width: 16px;
+        height: 16px;
+        background: #fcba04;
+        border-radius: 50%;
+        opacity: 0; }
+      .options fieldset .radio-label:hover:before {
+        opacity: .6; }
+      .options fieldset .radio-label:hover .triangle {
+        border-top: 10px solid #fdc836; }
+    .options fieldset #averageCourse:checked + .radio-label:after,
+    .options fieldset #bank:checked + .radio-label:after {
+      display: block;
+      opacity: 1; }
+  .options .select-label {
+    display: inline-block;
+    position: relative; }
+    .options .select-label:after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 9px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 10px solid #fcba04;
+      pointer-events: none;
+      z-index: 11; }
+    .options .select-label:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 1px;
+      width: 30px;
+      height: 30px;
+      border-left: 1px solid #fcba04;
+      pointer-events: none;
+      z-index: 10;
+      background: #fff;
+      border-bottom: 1px solid #0fa3b1;
+      border-top: 1px solid #0fa3b1; }
+    .options .select-label:hover:after {
+      border-top: 10px solid #fdd669; }
+  .options #banksMenu {
+    width: 300px;
+    height: 30px;
+    margin: 0 0 0 5px;
+    padding: 0 0 0 5px;
+    font: 1.4em Tahoma,sans-serif;
+    color: #0fa3b1;
+    border: 1px solid #0fa3b1;
+    background: #fff;
+    cursor: pointer; }
+    .options #banksMenu option {
+      font: .8em Tahoma,sans-serif; }
+  .options .disabled-state {
+    opacity: .4; }
+
+/*---options section---*/
+.currency-amount {
+  margin-top: 50px;
+  position: relative; }
+  .currency-amount .amount-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid #0fa3b1;
+    outline: none;
+    font-size: 2.5em;
+    text-align: center;
+    color: #fcba04; }
+    .currency-amount .amount-input:focus {
+      border-bottom: 3px solid #fcba04; }
+    .currency-amount .amount-input::-webkit-input-placeholder {
+      /* WebKit, Blink, Edge */
+      color: #8bd9dd;
+      opacity: 1; }
+    .currency-amount .amount-input:-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: #8bd9dd;
+      opacity: 1; }
+    .currency-amount .amount-input::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: #8bd9dd;
+      opacity: 1; }
+    .currency-amount .amount-input:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #8bd9dd;
+      opacity: 1; }
+  .currency-amount #currencyType {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    color: #0fa3b1;
+    font-size: 1.2em; }
+
+/*---options section---*/
+.result {
+  margin-top: 80px;
+  min-height: 200px; }
+  .result table {
+    width: 70%; }
+    .result table th, .result table td {
+      text-align: center;
+      font-family: Tahoma,sans-serif; }
+    .result table th {
+      width: 50%;
+      font-size: 2em;
+      color: #0fa3b1;
+      font-weight: normal;
+      border-bottom: 2px solid #0fa3b1; }
+    .result table td {
+      color: #fcba04;
+      font-size: 1.3em; }
+    .result table tbody tr {
+      height: 30px; }
+      .result table tbody tr:first-child {
+        font-size: 1.3em;
+        height: 60px; }
+  .result #resultBody {
+    width: 70%;
+    margin: 0 auto; }
+    .result #resultBody > div {
+      height: 30px;
+      line-height: 30px; }
+      .result #resultBody > div:first-child {
+        font-size: 1.3em;
+        height: 60px;
+        line-height: 60px; }
+    .result #resultBody .sum-col, .result #resultBody .course-col {
+      float: left;
+      width: 50%;
+      color: #fcba04;
+      font-size: 1.3em;
+      text-align: center; }
+
+/*---footer section---*/
+footer {
+  min-height: 100px;
+  background: #0fa3b1;
+  /*---mail section---*/ }
+  footer ul {
+    padding: 0;
+    margin: 10px 0 0 10px;
+    text-align: left; }
+    footer ul li {
+      list-style-type: none; }
+      footer ul li a {
+        display: block;
+        padding: 4px 0 0;
+        color: #e8f7ee;
+        font-size: 1.2em; }
+        footer ul li a:hover {
+          color: #fcba04;
+          text-decoration: none; }
+  footer .author {
+    text-align: center; }
+    footer .author span {
+      display: block;
+      margin-top: 65px;
+      color: #e8f7ee;
+      font-size: 1.2em; }
+      footer .author span a {
+        color: #e8f7ee; }
+  footer .mail {
+    margin-top: 10px;
+    text-align: right; }
+    footer .mail a {
+      display: block;
+      min-width: 220px;
+      color: #fcba04;
+      font-size: 1.1em; }
+      footer .mail a .glyphicon-envelope {
+        vertical-align: middle;
+        padding: 0; }
+      footer .mail a:visited {
+        color: #fcba04; }
+
+/*---contact form---*/
+#pageWrapper {
+  position: fixed;
+  display: block;
+  right: -130%;
+  top: 0;
+  width: 750px;
+  height: 700px;
+  overflow: hidden;
+  z-index: 999;
+  pointer-events: none;
+  -webkit-transition: all ease-in-out .4s;
+  transition: all ease-in-out .4s; }
+  #pageWrapper #page {
+    position: absolute;
+    right: -220px;
+    top: -360px;
+    width: 600px;
+    height: 1000px;
+    background-color: #fff;
+    /* for ie */
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    pointer-events: all;
+    overflow: hidden; }
+  #pageWrapper form, #pageWrapper #infoPage {
+    display: none;
+    width: 600px;
+    height: 600px;
+    margin-left: -100px;
+    margin-top: 290px;
+    padding: 40px 10px 0 10px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+    #pageWrapper form .overlay, #pageWrapper #infoPage .overlay {
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      top: -100px;
+      left: -200px;
+      background: #fff;
+      z-index: 9999; }
+    #pageWrapper form h4, #pageWrapper #infoPage h4 {
+      display: block;
+      position: relative;
+      left: -100px;
+      width: 440px;
+      padding: 0 0 6px 0;
+      color: #0b7882;
+      font-size: 21px;
+      border-bottom: 1px solid #fcba04; }
+  #pageWrapper #infoPage {
+    font-size: 1.1em;
+    color: #0b7882; }
+    #pageWrapper #infoPage p {
+      width: 360px;
+      text-indent: 1em; }
+    #pageWrapper #infoPage p:last-of-type {
+      padding-left: 20px; }
+    #pageWrapper #infoPage i {
+      font-weight: bold;
+      color: #0fa3b1; }
+    #pageWrapper #infoPage a {
+      color: #0b7882;
+      font-style: italic; }
+      #pageWrapper #infoPage a:hover {
+        color: #fcba04; }
+  #pageWrapper form fieldset {
+    position: relative;
+    width: 240px;
+    margin-left: 120px; }
+  #pageWrapper form textarea, #pageWrapper form input[type="text"] {
+    position: relative;
+    width: 240px;
+    border: 1px solid #0fa3b1;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 5px;
+    color: #0b7882;
+    z-index: 50; }
+    #pageWrapper form textarea:focus, #pageWrapper form input[type="text"]:focus {
+      border: 1px solid #fcba04; }
+  #pageWrapper form label {
+    position: absolute;
+    left: -130px;
+    top: 20px;
+    width: 120px;
+    color: #0fa3b1;
+    text-align: right; }
+  #pageWrapper form textarea {
+    position: relative;
+    z-index: 1;
+    resize: none;
+    font-size: 1.1em;
+    border-bottom: 1px solid #0fa3b1;
+    outline: none; }
+  #pageWrapper form #contactSubmit {
+    float: right;
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    padding: 0;
+    color: #e8f7ee;
+    background: #fcba04;
+    border: none;
+    font-size: 1.2em;
+    line-height: 40px; }
+    #pageWrapper form #contactSubmit:hover {
+      background: #fdd669; }
+  #pageWrapper #page-close {
+    position: absolute;
+    left: 10px;
+    top: 70px;
+    margin-top: -22px;
+    font-size: 3em;
+    color: #fcba04;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 9999; }
+    #pageWrapper #page-close:hover {
+      color: #ff8080; }
+    #pageWrapper #page-close span {
+      display: block; }
+  #pageWrapper.active-page {
+    display: block;
+    right: 0; }
+
+@media (max-width: 420px) {
+  #logo {
+    padding-top: 10px;
+    padding-bottom: 20px; }
+
+  #pageWrapper form fieldset {
+    margin-left: 0; }
+  #pageWrapper form label {
+    position: relative;
+    display: block;
+    left: 0;
+    top: 20px;
+    width: 100%;
+    color: #0fa3b1;
+    text-align: left; }
+
+  .result table .table-course-head {
+    width: 40%; }
+  .result table .table-result-head {
+    width: 60%; }
+  .result #resultBody {
+    font-size: .8em; }
+    .result #resultBody .sum-col {
+      width: 60%; }
+    .result #resultBody .course-col {
+      width: 40%; } }
+/* extra small */
+@media (max-width: 550px) {
+  /* header */
+  header #connect a {
+    font-size: 1.6em; }
+
+  .currency-wrap .currency {
+    width: 80px; }
+
+  /* select */
+  .options .select-label {
+    width: 90%;
+    display: inline-block;
+    position: relative; }
+    .options .select-label:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      right: 12px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 10px solid #fcba04;
+      pointer-events: none;
+      z-index: 11; }
+    .options .select-label:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 1px;
+      width: 36px;
+      height: 40px;
+      border-left: 1px solid #fcba04;
+      pointer-events: none;
+      z-index: 10;
+      background: #fff; }
+    .options .select-label:hover:after {
+      border-top: 10px solid #fdd669; }
+  .options #banksMenu {
+    width: 130%;
+    height: 40px;
+    margin: 0 0 0 -30%;
+    padding: 0 0 0 5px;
+    background: #fff; }
+    .options #banksMenu option {
+      font: .8em Tahoma,sans-serif; }
+
+  /* input */
+  .currency-amount .amount-input {
+    width: 98%;
+    font-size: 2em; }
+  .currency-amount #currencyType {
+    top: 20px;
+    left: 86%; }
+
+  /* result block */
+  .result table, .result #resultBody {
+    width: 98%; }
+
+  /*---contact form---*/
+  #pageWrapper {
+    right: -130%;
+    top: 0;
+    width: 100%;
+    height: 600px;
+    overflow-y: scroll;
+    pointer-events: all; }
+    #pageWrapper #page {
+      right: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 800px;
+      width: 100%;
+      -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+      transform: rotate(0); }
+    #pageWrapper form, #pageWrapper #infoPage {
+      margin: 10px auto 0;
+      width: 80%;
+      padding: 10px 10px 0 10px;
+      -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+      transform: rotate(0);
+      font-size: 1.2em; }
+      #pageWrapper form .overlay, #pageWrapper #infoPage .overlay {
+        left: 0; }
+      #pageWrapper form h4, #pageWrapper #infoPage h4 {
+        left: 30px;
+        width: 100%; }
+    #pageWrapper form #contactSubmit {
+      width: 120px;
+      height: 50px; }
+    #pageWrapper #infoPage {
+      font-size: 1.2em; }
+      #pageWrapper #infoPage p {
+        width: 100%;
+        text-align: justify; }
+    #pageWrapper div#page-close {
+      left: 10px;
+      top: 10px;
+      margin-top: 0;
+      -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+      transform: rotate(0); }
+
+  /* footer */
+  footer {
+    height: 210px;
+    font-size: 1.3em; }
+    footer .mail {
+      padding-top: 30px; }
+      footer .mail a .glyphicon-envelope {
+        vertical-align: middle;
+        padding: 0; }
+      footer .mail a:visited {
+        color: #fcba04; } }
+/*---mobile---*/
+@media (max-width: 767px) {
+  .currency-wrap .col-xs-4 {
+    margin-top: 30px; }
+
+  .options {
+    padding-left: 10%;
+    margin-top: 50px; }
+
+  /* info, contacts page*/
+  #pageWrapper #page-close {
+    left: 40px;
+    top: 110px; } }
+/*---tablets---*/
+@media (max-width: 991px) {
+  .currency-amount .input-amount {
+    width: 70%; }
+
+  footer .mail {
+    margin: 80px 0 0 10px;
+    text-align: left; }
+    footer .mail a {
+      color: #fcba04;
+      font-size: 1em; }
+      footer .mail a:visited {
+        color: #fcba04; }
+  footer .author {
+    height: 30px; }
+    footer .author span {
+      margin-top: 30px; }
+  footer ul li a, footer .mail a, footer .author a {
+    font-size: 1.2em; } }
+/*---desctop---*/
+/* modernizr */
+/* ie10 */
+.no-supports form .overlay, .no-supports #infoPage .overlay {
+  display: none !important; }
+
+/* ie9 */
+/* ie8 */
+.no-svg {
+  /*options fix*/
+  /*pages fix*/ }
+  .no-svg #logo {
+    margin: 0; }
+    .no-svg #logo .logo-box {
+      background-image: url(../images/logo.png); }
+  .no-svg .options #averageCourse, .no-svg .options #bank {
+    display: inline-block;
+    outline: 0; }
+  .no-svg .options .radio-label {
+    padding-left: 10px; }
+    .no-svg .options .radio-label:before, .no-svg .options .radio-label:after {
+      display: none; }
+  .no-svg .options .select-label:before, .no-svg .options .select-label:after {
+    display: none; }
+  .no-svg .options #banksMenu {
+    height: 30px; }
+  .no-svg #pageWrapper {
+    right: -130%;
+    top: 0;
+    height: 440px;
+    width: 460px;
+    z-index: 100; }
+    .no-svg #pageWrapper #page {
+      z-index: 1000;
+      right: 0;
+      top: 0;
+      left: 0;
+      bottom: 0; }
+    .no-svg #pageWrapper #page-close {
+      top: 30px;
+      z-index: 10000; }
+    .no-svg #pageWrapper form, .no-svg #pageWrapper #infoPage {
+      margin: 10px auto 0;
+      width: 80%;
+      padding: 10px 10px 0 10px;
+      font-size: 1.2em; }
+      .no-svg #pageWrapper form h4, .no-svg #pageWrapper #infoPage h4 {
+        left: 30px;
+        width: 100%; }
+  .no-svg #pageWrapper.active-page {
+    display: block;
+    right: 0; }
