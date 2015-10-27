@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+
+#pageWrapper{
+            right: -130%;
+            top: 0;
+            bottom: 0;
+            width: 460px;
+            z-index: 100;
+            #page{
+                z-index: 1000;
+                right: 0;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                transform: rotate(0);
+                overflow: auto;
+            }
+
+            #page-close{
+                top:30px;
+                transform: rotate(0);
+            }
+
+            form, #infoPage{
+                margin: 10px auto 0;
+                width: 80%;
+                padding: 10px 10px 0 10px;
+                transform: rotate(0);
+                font-size: 1.2em;
+
+                h4{ 
+                    left: 30px;
+                    width: 100%;
+                }
+
+            }
+        
+            #infoPage{
+                p:last-of-type{
+                   padding-left: 0;
+                }
+            }
+
+}
+
+#pageWrapper.active-page{
+    display: block;
+    right: 0;
+}

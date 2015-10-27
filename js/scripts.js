@@ -241,7 +241,7 @@
                         duration: 1000
                         
                     });
-                }else if(isIE() && isIE() < 10 ){
+                }else if(isIE()){
                     overlaysArr[1].style.display= 'none';
                 }   
             }
@@ -272,7 +272,7 @@
                         duration: 1000
                         
                     });
-                }else if(isIE() && isIE() < 10){
+                }else if(isIE()){
                     overlaysArr[0].style.display= 'none';
                 }       
             }
@@ -548,7 +548,7 @@
 
     // event.type must be -  keypress
     function getChar(event) {
-        if (event.which === null) {
+        if (event.which == null) {
             if (event.keyCode < 32) return null;
             return String.fromCharCode(event.keyCode); // IE
         }

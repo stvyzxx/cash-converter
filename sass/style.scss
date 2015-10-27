@@ -343,8 +343,14 @@ header{
         &:-ms-input-placeholder { /* Internet Explorer 10-11 */
            color:    $c-blue2;
            opacity:  1;
-        }    
+        }
+        
+        &::-ms-clear {
+            display: none;
+        }
     }
+    
+    
     #currencyType{
         position: absolute;
         right: 15px;
@@ -785,13 +791,18 @@ footer{
             width: 98%;
             font-size: 2em;
         }
+        
         #currencyType{
             top: 20px;
             left: 86%;
         }
     }
     
-
+    /* ie9 */
+    .no-cssgradients{
+        
+ 
+    }
 
     /* result block */
      .result{
@@ -885,6 +896,16 @@ footer{
             }
         }
     }
+    
+    
+        /* ie8 */
+    .no-svg{
+        .currency-amount{
+            #currencyType{
+                top: 15px;
+            }
+        }
+    }
 }
 
 
@@ -907,6 +928,7 @@ footer{
         }
     }
 }
+
 
 /*---tablets---*/
 @media (max-width: 991px){
@@ -943,10 +965,12 @@ footer{
     }
 }
 
+
 /*---desctop---*/
 @media (min-width: 993px){   
     
 }
+
 
 /* modernizr */
 
@@ -961,7 +985,9 @@ footer{
 
 /* ie9 */
 .no-cssgradients{
-  
+    #currencyType{
+        top: 10px;
+    }
 }
 
 /* ie8 */
@@ -1001,45 +1027,62 @@ footer{
         }
     }
     
-    /*pages fix*/
+}
+
+
+/* IE10+ CSS styles */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     #pageWrapper{
-        right: -130%;
-        top: 0;
-        height: 440px;
-        width: 460px;
-        z-index: 100;
-        #page{
-            z-index: 1000;
-            right: 0;
+            right: -130%;
             top: 0;
-            left: 0;
             bottom: 0;
-        }
+            width: 460px;
+            z-index: 100;
+            #page{
+                z-index: 1000;
+                right: 0;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                transform: rotate(0);
+                overflow: auto;
+            }
 
-        #page-close{
-            top:30px;
-            z-index: 10000;
-        }
+            #page-close{
+                top:30px;
+                transform: rotate(0);
+            }
+
+            form, #infoPage{
+                margin: 10px auto 0;
+                width: 80%;
+                padding: 10px 10px 0 10px;
+                transform: rotate(0);
+                font-size: 1.2em;
+
+                h4{ 
+                    left: 30px;
+                    width: 100%;
+                }
+
+            }
         
-        form, #infoPage{
-            margin: 10px auto 0;
-            width: 80%;
-            
-            padding: 10px 10px 0 10px;
-            font-size: 1.2em;
-
-            h4{ 
-                left: 30px;
-                width: 100%;
+            #infoPage{
+                p:last-of-type{
+                   padding-left: 0;
+                }
             }
 
         }
 
-    }
-    
     #pageWrapper.active-page{
         display: block;
         right: 0;
+    }
+    .currency-amount{
+         #currencyType{
+            top: 10px;
+        }
     }
 
 }
