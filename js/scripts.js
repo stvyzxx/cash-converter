@@ -66,6 +66,7 @@
         script.type = 'text/javascript';
         script.async = true;
         script.src = src;
+        script.id = 'receivedJSON';    
 
         document.getElementsByTagName('head')[0].appendChild(script);
         };
@@ -112,14 +113,15 @@
     
     /* json success function */
     function onSuccess(data){
-       currencyObj = data;
-       organizationsArr = data.organizations;
-       oschadB = organizationsArr[9];
-       //console.log(data);
-       oschadCurrencies = oschadB.currencies;
-       getBanks();
-       banksListGen();
-       getAverageCourse(); // average courses
+        var script = document.getElementById('receivedJSON');
+        currencyObj = data;
+        organizationsArr = data.organizations;
+        oschadB = organizationsArr[9];
+        oschadCurrencies = oschadB.currencies;
+        getBanks();
+        banksListGen();
+        getAverageCourse(); // average courses
+        script.parentNode.removeChild(script); 
     }
 
 

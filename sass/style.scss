@@ -1037,6 +1037,7 @@ footer{
             top: 0;
             bottom: 0;
             width: 460px;
+            height: 100%;
             z-index: 100;
             #page{
                 z-index: 1000;
@@ -1058,7 +1059,6 @@ footer{
                 width: 80%;
                 padding: 10px 10px 0 10px;
                 transform: rotate(0);
-                font-size: 1.2em;
 
                 h4{ 
                     left: 30px;
@@ -1070,6 +1070,12 @@ footer{
             #infoPage{
                 p:last-of-type{
                    padding-left: 0;
+                }
+            }
+        
+            form{
+                textarea{
+                    height: 200px;
                 }
             }
 
