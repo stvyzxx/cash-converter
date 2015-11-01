@@ -24,7 +24,8 @@
             eur : 0,      
             rub : 0,
             usd : 0             
-        }, anim,
+        }, 
+        anim,
         banksToShow = ["А-Банк", "Альфа-Банк", "Кредобанк", "Альянс", "Львов Банк", "ОТП Банк", "Ощадбанк", 
                         "ПЛАТИНУМ БАНК (Platinum Bank TM)", "ПУМБ", "ПриватБанк", "Райффайзен Банк Аваль", 
                         "Укрсоцбанк UniCredit Bank TM"],
@@ -92,7 +93,7 @@
         radioBank = document.getElementById('bank');
         pageLinks = document.querySelectorAll('.page-link');
         closePage = document.getElementById('page-close');
-
+        cForm = document.getElementById('conForm');
         /* initializing */
         addEvent(hrivniaBut, 'click', onCurrencyChoose);
         addEvent(currencyBut, 'click', onCurrencyChoose);
@@ -104,7 +105,27 @@
         addEvent(radioBank, 'click', onRadioClick);
         eventForClass(pageLinks, 'click', onPageLinkClick);
         addEvent(closePage, 'click', onPageClose);
-
+        addEvent(cForm, 'submit', onContactsSubmit);
+        
+        
+        /* checks if contact form was submitted, if true - creates inform message */
+        if(sessionStorage.getItem('formSubmit')){
+            var submitMessage = document.createElement('div');
+            var closeIcon = document.createElement('div');
+            submitMessage.innerHTML = 'Повідомлення відправлено!';
+            submitMessage.id = 'submitMessage';
+            closeIcon.id = 'messageClose';
+            closeIcon.className = 'glyphicon glyphicon-remove';
+            submitMessage.appendChild(closeIcon);
+            document.body.appendChild(submitMessage);
+            sessionStorage.removeItem('formSubmit');
+            
+            addEvent(closeIcon, 'click', onMessageClose);
+            
+            function onMessageClose(){
+                document.body.removeChild(submitMessage);
+            }
+        }
     }
 
     
@@ -469,7 +490,10 @@
         }
     }
     
-    
+    //acts on submitting contact form    
+    function onContactsSubmit(){
+        sessionStorage.setItem('formSubmit', true);
+    }
 
     //moves chosen currency row to up
     function resultSort(){
